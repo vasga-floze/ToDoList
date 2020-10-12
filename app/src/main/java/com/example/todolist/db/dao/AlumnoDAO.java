@@ -54,7 +54,6 @@ public class AlumnoDAO {
         Cursor data = db.rawQuery("SELECT * FROM alumnos", null, null);
         if (data.moveToFirst()) ;
         {
-
             do {
                 Alumno al = new Alumno();
                 al.setCodigo(data.getString(0));
@@ -87,8 +86,8 @@ public class AlumnoDAO {
         Cursor data = db.rawQuery("SELECT * FROM alumnos WHERE nombre LIKE ?", new String[]{"%"+name+"%"}, null);
         if (data.moveToFirst()) ;
         {
-            Alumno al = new Alumno();
             do {
+                Alumno al = new Alumno();
                 al.setCodigo(data.getString(0));
                 al.setNombre(data.getString(1));
                 al.setEdad(data.getInt(2));
