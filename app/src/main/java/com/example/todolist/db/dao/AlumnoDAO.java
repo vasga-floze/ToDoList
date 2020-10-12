@@ -4,9 +4,8 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
-import com.example.todolist.MySQLiteOpenHelper;
+import com.example.todolist.db.MySQLiteOpenHelper;
 import com.example.todolist.db.pojo.Alumno;
 
 import java.util.ArrayList;

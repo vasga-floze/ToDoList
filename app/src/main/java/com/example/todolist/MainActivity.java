@@ -1,6 +1,8 @@
 package com.example.todolist;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -23,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-      
+        RecyclerView rcvAlumno = (RecyclerView) findViewById(R.id.recycler_alumnos);
+        AlumnoDAO dao = new AlumnoDAO(this);
+        ArrayList<Alumno> alumno = dao.getAll();
+        AlumnoAdapter adapter = new AlumnoAdapter(alumno);
+        rcvAlumno.setAdapter(adapter);
+        rcvAlumno.setLayoutManager(new LinearLayoutManager(this));
     }
 }
